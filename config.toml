@@ -1,0 +1,34 @@
+baseURL = "https://kaijin3ss.com"
+languageCode = "zh-Hans"
+defaultContentLanguage = "zh"
+title = "Kaijin三水の杂货铺"
+preserveTaxonomyNames = true
+theme = "dream"
+
+copyright = "Kaijin三水的原创文章，转载请注明出处！"
+
+[params]
+  backgroundImage = "/img/pic_background.png"
+  # base info
+  author = "Kaijin三水"
+  description = "先放这，还没想好"
+  motto = "Impossible = I'm possible;"
+  avatar = "/img/pic_avatar_2020.png"
+
+  # social links
+  email = "kaijin3ss@outlook.com"
+  github = "kaijin3ss"
+  twitter = "kaijin3ss"
+  weibo = "kaijin3ss"
+  strava = "kaijin3ss"
+
+  # site base params
+  siteStartYear = 2020
+  # favicon = ""
+  # background = ""
+  # enableSearch = false
+
+  # dark mode
+  # darkgroundImageDark = "/img/background-dark.jpg"
+  # darkNav = true
+  # dark404 = true

@@ -1,0 +1,106 @@
+<article class="dream-header">
+  <section class="ui top attached center aligned segment">
+    <div class="ui small circular image">
+      {{ if isset .Site.Params "avatar" }}
+      <img src="{{ .Site.Params.avatar | relURL }}">
+      {{ end }}
+    </div>
+
+    {{ if or (hasPrefix .RelPermalink "/posts") (hasPrefix .RelPermalink "/tags") (hasPrefix .RelPermalink "/categories") }}
+    <div class="ui medium header">
+      {{ else }}
+      <h1 class="ui medium header">
+        {{ end }}
+        {{ if .Site.Params.headerTitle }}
+        {{- .Site.Params.headerTitle -}}
+        {{ else }}
+        {{- .Site.Params.author -}}{{- T "blogAlias" -}}
+        {{ end }}
+        <div class="sub header" style="margin-top: 0.5rem;">{{- .Site.Params.motto -}}</div>
+        {{ if or (hasPrefix .RelPermalink "/posts") (hasPrefix .RelPermalink "/tags") (hasPrefix .RelPermalink "/categories") }}
+    </div>
+    {{ else }}
+    </h1>
+    {{ end }}
+
+    <div class="ui horizontal list">
+      {{ if .Site.Params.email }}
+      <a class="item" href="mailto:{{ .Site.Params.email }}">
+        <i class="mail icon" title="Email"></i>
+      </a>
+      {{ end }}
+      {{ if .Site.Params.twitter }}
+      <a class="item" href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank">
+        <i class="twitter icon" title="Twitter"></i>
+      </a>
+      {{ end }}
+
+      {{ if .Site.Params.github }}
+      <a class="item" href="https://github.com/{{ .Site.Params.github }}" target="_blank">
+        <i class="github icon" title="GitHub"></i>
+      </a>
+      {{ end }}
+
+      {{ if .Site.Params.weibo }}
+      <a class="item" href="https://weibo.com/{{ .Site.Params.weibo }}" target="_blank">
+        <i class="weibo icon" title="Weibo"></i>
+      </a>
+      {{ end }}
+
+      {{ if .Site.Params.strava }}
+      <a class="item" href="https://www.strava.com/athletes/{{ .Site.Params.strava }}" target="_blank">
+        <i class="strava icon" title="strava"></i>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+
+  <!--分类-->
+  {{ if .Site.Taxonomies.categories }}
+  <section class="ui attached segment dream-categories">
+    <div class="ui accordion">
+      {{ range .Site.Taxonomies.categories }}
+      <div class="title">
+        <i class="dropdown icon"></i>
+        <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+      </div>
+      <div class="content">
+        <div class="ui list">
+          {{ range .Pages }}
+          <div class="item">
+            <div class="content">
+              <a href="{{ .Permalink }}" class="item">{{ .Title }}</a>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if .Site.Taxonomies.tags }}
+  <section class="ui attached center aligned segment dream-tags">
+    {{ range .Site.Taxonomies.tags }}
+    <a class="ui label" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+    {{ end }}
+  </section>
+  {{ end }}
+
+  <section class="ui bottom attached center aligned segment">
+    {{ if .Site.Params.siteStartYear }}
+    <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} -
+      {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
+    {{ else }}
+    <p>© {{ now.Year }} {{ .Site.Title }}</p>
+    {{ end }}
+
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a
+        href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+    {{ if .Site.Params.headerBottomText }}
+    <p>{{ .Site.Params.headerBottomText | safeHTML }}</p>
+    {{ end }}
+  </section>
+</article>

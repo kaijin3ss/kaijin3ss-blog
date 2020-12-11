@@ -1,0 +1,27 @@
+<div class="ui centered relaxed grid dream-grid dream-back">
+  {{ $headless := .Site.GetPage "/about" }}
+  {{ $aboutPages := $headless.Resources.ByType "page" }}
+  {{ range $aboutPages }}
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article>
+      <div class="ui top attached segment">
+        <h3 class="ui header">{{ .Title }}</h3>
+      </div>
+      <div class="ui bottom attached segment markdown-body">
+        {{ .Content | emojify }}
+      </div>
+    </article>
+  </section>
+  {{ end }}
+<!-- 社交链接（参考）
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article>
+      <div class="ui top attached segment">
+        <h3 class="ui header">{{ i18n "socialLinks" }}</h3>
+      </div>
+      <div class="ui bottom attached segment">
+        {{ partial "socials.html" (dict "Site" .Site "IconSize" "large") }}
+      </div>
+    </article>
+  </section> -->
+</div>

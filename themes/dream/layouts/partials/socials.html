@@ -1,0 +1,43 @@
+<nav class="ui secondary menu dream-menu dream-socials">
+  {{ if .Site.Params.email }}
+  <div class="item">
+    <a href="mailto:{{ .Site.Params.email }}">
+      <i class="{{ .IconSize }} mail icon" title="Email"></i>
+    </a>
+  </div>
+  {{ end }}
+
+  {{ if .Site.Params.twitter }}
+  <div class="item">
+    <a href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank">
+      <i class="{{ .IconSize }} twitter icon" title="Twitter"></i>
+    </a>
+  </div>
+  {{ end }}
+
+  {{ if .Site.Params.github }}
+  <div class="item">
+    <a href="https://github.com/{{ .Site.Params.github }}" target="_blank">
+      <i class="{{ .IconSize }} github icon" title="GitHub"></i>
+    </a>
+  </div>
+  {{ end }}
+
+  {{ if .Site.Params.weibo }}
+  <div class="item">
+    <a href="https://weibo.com/{{ .Site.Params.weibo }}" target="_blank">
+      <i class="{{ .IconSize }} weibo icon" title="Weibo"></i>
+    </a>
+  </div>
+  {{ end }}
+
+
+  {{ if .Site.Params.strava }}
+  <div class="item">
+    <a href="https://www.strava.com/athletes/{{ .Site.Params.strava }}" target="_blank">
+      <i class="{{ .IconSize }} strava icon" title="strava"></i>
+    </a>
+  </div>
+  {{ end }}
+
+</nav>
