@@ -2,3 +2,4 @@ node_modules
 .vscode
 public
 content/posts/*.md
+!content/posts/_index.md
