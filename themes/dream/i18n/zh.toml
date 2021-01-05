@@ -34,6 +34,9 @@ other = "{{ .Count }}篇文章"
 [socialLinks]
 other = "社交链接"
 
+[gameLinks]
+other = "游戏人生"
+
 [minuteRead]
 other = " 分钟阅读"
 
