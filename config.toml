@@ -32,3 +32,12 @@ copyright = "Kaijin三水的原创文章，转载请注明出处！"
   # darkgroundImageDark = "/img/background-dark.jpg"
   # darkNav = true
   # dark404 = true
+
+[params.valine]
+    enable = true
+    appId = 'K7P2RCHDmpsr1GnzJ9diMYex-gzGzoHsz'
+    appKey = 'CtvXjbyXnrjbz1H9rn7LJJEu'
+    avatar = 'retro' 
+    placeholder = '说点什么吧...'
+    visitor = true
+    pageSize = 8
